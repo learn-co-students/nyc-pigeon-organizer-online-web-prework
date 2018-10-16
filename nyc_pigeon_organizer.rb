@@ -17,6 +17,7 @@ list
 end 
 end 
 end
+
  data.each {|attr, value_hash|
     attr
     value_hash.each {|value, name_list|
