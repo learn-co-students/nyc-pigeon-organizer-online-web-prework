@@ -8,7 +8,7 @@ list = {}
         elsif pigeon_list[name].include?(key)
           list[i][key] << x.to_s
         else
-          pigeon_list[name][key] = [key2.to_s]
+          list[i][key] = [x.to_s]
         end
       end
     end
