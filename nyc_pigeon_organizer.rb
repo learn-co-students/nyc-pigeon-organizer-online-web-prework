@@ -1,12 +1,19 @@
 require 'pry'
-pigeon_list={}
+
 def nyc_pigeon_organizer(data)
+  pigeon_list={}
   data.each do  |pigeon_attribute,key|
     key.each do   |key, names|
-      birds_names=names.join(" ")
-pigeon_list[birds_names]= pigeon_attribute
-binding.pry
+      names.each  do |bird_name|
+        if pigeon_list[bird_name] == nil
+        pigeon_list[bird_name]= {pigeon_attribute=> key.to_s}
+
+        else
+          pigeon_list[bird_name][pigeon_attribute]= [key.to_s]
+        end
+        #binding.pry
       end
     end
-  return update_hash
+  end
+  #return update_hash
 end
