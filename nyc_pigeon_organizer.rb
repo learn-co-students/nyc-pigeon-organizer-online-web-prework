@@ -6,23 +6,28 @@ def nyc_pigeon_organizer(data)
   
   data[:gender].each do |gender_key, name_array|
     
-    name_array.each do |name|
+#    name_array.each do |name|
       
-      pigein_list[pigeon_name] = name
+      pigeon_list = Hash[name_array.collect {|name| [name, ""]}]
+        
+        
       
 binding.pry
 
-     end 
+#     end 
   end
 end
 
 
-#data.each do |attribute_key, value_hash|
+# 1. In the pigeon data hash, iterate down to the level 
+# of nested data that needs to be accessed - an array of
+# pigeon names.
 
-#  if attribute_key == :gender
- 
-#    value_hash.each do |gender_key, name_array|
-      
-#      name_array.each do |name|
-        
-#        temp << name = {} 
+# 2. Iterate to and use :gender => {} because all pigeon 
+# names exist in :male [] and :female [] and are not 
+# repeated.
+
+# 3. Each pigeon name which is an element in :male []  and  
+# :female [] needs to be collected and made a key in pigeon
+# hash. Can this be done without assigning a value to the key?
+# Can I instantiate a hash with just keys in it? 
