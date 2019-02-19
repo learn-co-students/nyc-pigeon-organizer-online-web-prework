@@ -6,7 +6,7 @@ def nyc_pigeon_organizer(data)
   
   all_names = []
   
-  data.each do |main_attribute_key, attribute_hash|
+  data.each do |attribute_category, attribute_hash|
     
     attribute_hash.each do |attribute_key, names_array|
   
@@ -15,25 +15,30 @@ def nyc_pigeon_organizer(data)
         all_names << name 
       
         pigeon_list = Hash[all_names.collect {|name| [name, {}]}]
-      
+        
+       
           pigeon_list.each do |name_key, value|
         
             if name_key == name
               
-              value[main_attribute_key] = attribute_key 
-             
+            value[attribute_category] = attribute_key
+            
+            pigeon_list    
+binding.pry                
             end 
         
           end
-binding.pry             
-      end  
+             
+      end   
       
     end
     
   end
-  pigeon_list  
- 
+    
 end
+
+
+# value = {attribute_category => attribute_key}
 
 
 # 1. In the pigeon data hash, iterate down to the level 
