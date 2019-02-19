@@ -6,34 +6,40 @@ def nyc_pigeon_organizer(data)
   
   all_names = []
   
-  data.each do |attribute_category, attribute_hash|
-    
-    attribute_hash.each do |attribute_key, names_array|
+  data[:gender].each do |attribute_key, names_array|
   
-      names_array.each do |name|
+    names_array.each do |name|
       
-        all_names << name 
+      all_names << name 
       
-        pigeon_list = Hash[all_names.collect {|name| [name, {}]}]
+      pigeon_list = Hash[all_names.collect {|name| [name, {}]}]
         
-       
-          pigeon_list.each do |name_key, value|
-        
-            if name_key == name
-              
-            value[attribute_category] = attribute_key
-            
-            pigeon_list    
-binding.pry                
-            end 
-        
-          end
-             
-      end   
-      
-    end
+    end 
+  end 
     
-  end
+        data.each do |attribute_category, attribute_hash|
+    
+          attribute_hash.each do |attribute_key, names_array|
+            
+            names_array.each do |name|
+        
+              pigeon_list.each do |name_key, value|
+        
+                if name_key == name
+              
+                  value[attribute_category] = attribute_key
+            
+                pigeon_list    
+binding.pry                
+                end
+                
+              end 
+        
+            end
+             
+          end   
+      
+        end
     
 end
 
