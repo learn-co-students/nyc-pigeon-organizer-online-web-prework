@@ -7,9 +7,9 @@ def nyc_pigeon_organizer(data)
   
   all_names = []
   
-  data.each do |attribute_cat, attribute_hash|
+  data.each do |att_cat, att_hash|
     
-    attribute_hash.each do |attribute_key, names_array|
+    att_hash.each do |att_key, names_array|
   
       names_array.each do |name|
       
@@ -17,11 +17,11 @@ def nyc_pigeon_organizer(data)
      
         pigeon_list = Hash[all_names.collect {|name| [name, {}]}]
           
-        pigeon_list.each do |name_key, value|
+        pigeon_list.each do |name_key, att_value|
         
           if name_key == name
               
-            value[attribute_cat] = [attribute_key]
+            att_value << [att_cat] = [att_key]
 #binding.pry            
                 
           end
@@ -34,7 +34,7 @@ def nyc_pigeon_organizer(data)
        
   end
   pigeon_list
-#binding.pry 
+binding.pry 
 end
 
 
