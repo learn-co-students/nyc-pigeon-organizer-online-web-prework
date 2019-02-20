@@ -22,8 +22,29 @@ end
 # important take away is building the new hash step by step
 # line by line - lines 9-11 above. And... the use of the logical
 # operator || to allow for Theo to have multiple attributes as 
-# you iterate through. If pigeon_list[name] id true(exists) or =[]
-# was key.
+# you iterate through. If pigeon_list[name] is true(exists) or
+# if not true (does not exist) then make Pigeon_list[name] exist
+#  with a value of an empty hash. This was key.
+
+
+# def nyc pigeon_organizer(data)
+#   pigeon_lisy = {}
+#   all_names + []
+#   data.each do |att_cat, att_hash|
+#     att_hash.each do |att_key, names_array|
+#       names_array.each do |name|
+#         all_names << name
+#         pigeon_list = Hash[all_names.collect {|name| [name, {}]}]
+#         pigeon_list.each do |name_key, att_value|
+#           if name_key == name
+#             att_value[att_cat] = [att_key]
+#           end 
+#         end 
+#       end 
+#     end 
+#   end
+#   pigeon_list 
+# end
 
 #   all_names = []
 
