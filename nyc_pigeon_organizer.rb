@@ -22,7 +22,7 @@ end
 # important take away is building the new hash step by step
 # line by line - lines 9-11 above. And... the use of the logical
 # operator || to allow for Theo to have multiple attributes as 
-# you iterate through. If pigeon_list[name] is true(exists) or
+# you iterate through. If pigeon_list[name] is true(exists) || or 
 # if not true (does not exist) then make Pigeon_list[name] exist
 #  with a value of an empty hash. This was key.
 
