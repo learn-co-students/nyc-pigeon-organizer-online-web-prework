@@ -18,7 +18,12 @@ end
 
 
 # below are all my discarded lines of code as well as discarded
-# ideas that were over complicating
+# ideas that were over complicating the method. The most
+# important take away is building the new hash step by step
+# line by line - lines 9-11 above. And... the use of the logical
+# operator || to allow for Theo to have multiple attributes as 
+# you iterate through. If pigeon_list[name] id true(exists) or =[]
+# was key.
 
 #   all_names = []
 
