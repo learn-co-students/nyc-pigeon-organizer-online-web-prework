@@ -2,42 +2,32 @@
 require 'pry'
 
 def nyc_pigeon_organizer(data)
-  
   pigeon_list = {}
-  
-  all_names = []
-  
   data.each do |att_cat, att_hash|
-    
     att_hash.each do |att_key, names_array|
-  
       names_array.each do |name|
-      
-        all_names << name 
-      
         pigeon_list[name] ||= {} 
-            
         pigeon_list[name][att_cat] ||= []
-            
         pigeon_list[name][att_cat] << att_key.to_s  
-            
-#binding.pry            
-              
       end
-            
     end   
-       
   end
   pigeon_list
-#binding.pry 
 end
+
+
+
+# below are all my discarded lines of code as well as discarded
+# ideas that were over complicating
+
+#   all_names = []
+
+#   all_names << name
 
 #   pigeon_list = Hash[all_names.collect {|name| [name, {}]}]
 
 #   pigeon_list.each do |name_key, att_value|
 #     if name_key == name
-
-
 
 
 # data[:gender].each do |attribute_key, names_array|
@@ -53,9 +43,9 @@ end
 # names exist in :male [] and :female [] and are not 
 # repeated.
 
-# Added a step above. Combined (<< each into new [] - lines
-# 11 & 13) all pigeons in :male and :female arrays into new
-#  all_names [] in order to apply line 15 to all pigeons.
+# Added a step above. Combined (<< each into new [] - lines)
+# all pigeons in :male and :female arrays into new
+# all_names [] in order to apply line 15 to all pigeons.
 
 # 3. Each pigeon name which is an element in :male []  and  
 # :female [] needs to be collected and made a key in pigeon
@@ -72,7 +62,7 @@ end
 # turned into a key value pair, but a value that is empty to 
 # be added to later.
 
-# from line 15 above: 
+# from line above: 
 # pigeon_list = Hash[all_names.collect {|name| [name, ""]}]
 
-# 4. Now 
+# 4. Now... 
