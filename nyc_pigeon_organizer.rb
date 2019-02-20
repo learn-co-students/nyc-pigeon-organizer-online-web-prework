@@ -27,6 +27,17 @@ end
 #  with a value of an empty hash. This was key.
 
 
+# My first try at the method below, was doing evrything it was 
+# suuposed to do on the first iteration, but on the second time 
+# through it was overwriting the new hash with new key value pair.
+# I had thought line 42 below was a big find online to converting
+# element into a key pointing to an empty value (in this case hash)
+# I used it and put my placeholders in the right spots to make the 
+# code work, but it was not achieving what I thought. On closer
+# inspection, I think maybe, having to do with using .collect
+# returning a new collection instead of... I'm not sure, but it
+# only worked correctly on the first iteration.
+
 # def nyc pigeon_organizer(data)
 #   pigeon_lisy = {}
 #   all_names + []
