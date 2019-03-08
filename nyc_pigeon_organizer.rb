@@ -1,4 +1,22 @@
+# consider refactoring using #each_with_object as well as ||=
+
 require 'pry'
+
+def populate(item, pigeon_list, pigeon_data)
+  pigeon_list.each do |pigeon, data|
+    data.each do |attribute, attribute_data|
+        pigeon_data.each do |key,values|
+          if key == item && attribute == item
+            values.each do |trait, names|
+              if names.include?(pigeon)
+                attribute_data << trait.to_s
+              end
+            end
+          end
+        end
+    end
+  end
+end
 
 def nyc_pigeon_organizer(pigeon_data)
   pigeon_list = {}
@@ -20,52 +38,9 @@ def nyc_pigeon_organizer(pigeon_data)
     end
   end
 
-  pigeon_list.each do |pigeon, data|
-    data.each do |attribute, attribute_data|
-        pigeon_data.each do |key,values|
-          if key == :color && attribute == :color
-            values.each do |trait, names|
-              if names.include?(pigeon)
-                attribute_data << trait.to_s
-              end
-            end
-          end
-          if key == :gender && attribute == :gender
-            values.each do |trait, names|
-              if names.include?(pigeon)
-                attribute_data << trait.to_s
-              end
-            end
-          end
-          if key == :lives && attribute == :lives
-            values.each do |trait, names|
-              if names.include?(pigeon)
-                attribute_data << trait.to_s
-              end
-            end
-          end
-          # These three if statements aren't DRY.
-          # How could I do something like this?
-          #
-          # def populate(item)
-          #   if key == item && attribute == item
-          #     values.each do |trait, names|
-          #       if names.include?(pigeon)
-          #         attribute_data << trait.to_s
-          #       end
-          #     end
-          #   end
-          # end
-          # populate(:color)
-          # populate(:gender)
-          # populate(:lives)
-        end
-    end
-  end
+  populate(:color, pigeon_list, pigeon_data)
+  populate(:gender, pigeon_list, pigeon_data)
+  populate(:lives, pigeon_list, pigeon_data)
 
   pigeon_list
 end
-
-# pigeon_list.each do |pigeon, pigeon_data|
-
-# end
