@@ -1,3 +1,28 @@
 def nyc_pigeon_organizer(data)
-  # write your code here!
+
+  names = []
+  pigeon_hash = {}
+
+  data.each do |attribute, items|
+    items.each do |feat, arr|
+      arr.each do |name|
+        names << name if !names.include?(name)
+      end
+    end
+  end
+
+  names.each do |num|
+    pigeon_hash[num] = Hash.new {|k, v| k[v] = []}
+    data.each do |attribute, items|
+      pigeon_hash[num][attribute]
+      items.each do |feat, arr|
+        arr.each do |name|
+          pigeon_hash[name][attribute] << feat.to_s if name == num
+        end
+      end
+    end
+  end
+
+  pigeon_hash
+
 end
