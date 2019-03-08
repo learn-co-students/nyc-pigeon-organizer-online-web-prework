@@ -44,6 +44,21 @@ def nyc_pigeon_organizer(pigeon_data)
               end
             end
           end
+          # These three if statements aren't DRY.
+          # How could I do something like this?
+          #
+          # def populate(item)
+          #   if key == item && attribute == item
+          #     values.each do |trait, names|
+          #       if names.include?(pigeon)
+          #         attribute_data << trait.to_s
+          #       end
+          #     end
+          #   end
+          # end
+          # populate(:color)
+          # populate(:gender)
+          # populate(:lives)
         end
     end
   end
