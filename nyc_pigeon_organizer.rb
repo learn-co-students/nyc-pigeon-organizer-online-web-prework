@@ -4,8 +4,9 @@ def nyc_pigeon_organizer(data)
   # write your code here!
   pigeon_list = {}
   
-  data.each_with_index do |a, b|
+  color = data.fetch(:color)
+    color.map do |key, this_colors |
   binding.pry
-  
+  #gender = data.fetch(:gender)
   end  
 end
